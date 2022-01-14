@@ -10,7 +10,7 @@ const petItems = document.querySelectorAll('.pets__cards-item')
 
 let pets = [];
 const request = new XMLHttpRequest();
-request.open('GET', '../../assets/pets.json');
+request.open('GET', './assets/pets.json');
 request.onload = () => {
     pets = JSON.parse(request.response);
 }
