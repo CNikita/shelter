@@ -42,7 +42,7 @@ function showModal(item) {
     popupBlackout.style.display = 'block'
     for (let pet of pets) {
         if (pet["name"] === name) {
-            document.querySelector('.modal-pet-image').src = pet["img"]
+            document.querySelector('.modal-pet-image').src = `../.${pet["img"]}`
             document.querySelector('.name').textContent = pet["name"]
             document.querySelector('.breed').textContent = `${pet["type"]} -  ${pet["breed"]}`
             document.querySelector('.description').textContent = pet["description"]
@@ -115,7 +115,7 @@ function generatePets(count, page) {
             petItems[i].children[j].classList.add('animation-op0');
         }
         setTimeout(() => {
-            petItems[i].children[0].children[0].src = `${array[page-1][i]["img"]}`;
+            petItems[i].children[0].children[0].src = `../.${array[page-1][i]["img"]}`;
             petItems[i].children[0].children[0].alt = `pets-${array[page-1][i]['name']}`
             petItems[i].children[1].textContent = `${array[page-1][i]['name']}`;
             for (let j = 0; j < 3; j ++) {
